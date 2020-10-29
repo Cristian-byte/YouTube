@@ -22,9 +22,10 @@ export class YoutubeService {
 
     const params = new HttpParams()
       .set('part', 'snippet')
-      .set('maxResults', '10')
+      .set('maxResults', '9')
       .set('playlistId', this.playlist)
       .set('key', this.apikey)
+      .set('pageToken', this.nextPageToken)
 
     return this.http.get<YoutubeResponse>( url, { params: params })
       .pipe(

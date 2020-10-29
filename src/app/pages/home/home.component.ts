@@ -16,18 +16,21 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(){
 
+    this.cargarVideos();
+
+  }
+
+  cargarVideos(){
     this.youtubeService.getVideos()
-        .subscribe( resp => {
+      .subscribe(resp => {
 
-          this.videos.push(...resp);
-          console.log(this.videos)
+        this.videos.push(...resp);
+        console.log(this.videos)
 
-        });
+      });
   }
 
   mostrarVideo(video: Video){
-
-    console.log(video)
     Swal.fire({
       html:`
       <h4>${video.title}</h4>
