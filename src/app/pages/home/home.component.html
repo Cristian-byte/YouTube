@@ -13,7 +13,8 @@
           <strong>Publicado:</strong> {{ video.publishedAt | date }}
       </p>
 
-      <button class="btn btn-outline-primary btn-block">
+      <button class="btn btn-outline-primary btn-block"
+              (click)="mostrarVideo(video)">
           Ver video
       </button>
     </div>
